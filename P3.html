@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Odd or Even Checker</title>
+        <style>
+            body{
+                background-color: salmon;
+                font-family: cursive;
+                display: flex;
+                justify-content: center;
+                height: 100vh;
+                align-items: center;
+            }
+            .container{
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+            }
+            input{
+                padding: 10px;
+                margin: 10px;
+                font-size: 16px;
+            }
+            button{
+                padding: 10px 20px;
+                margin: 10px;
+                font-size: 18px;
+                cursor: pointer;
+                background-color: salmon;
+                color: white;
+                font-weight: bolder;
+                border: none;
+                border-radius: 10px;
+            }
+            button:hover{
+                background-color: white;
+                color: salmon;
+                border: 2px solid salmon;
+            }
+
+            #result{
+                color: salmon;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Odd or Even Checker</h1>
+            <input type="number" id="number" placeholder="Enter a Number">
+            <br>
+            <button onclick="checkNumber()">Check</button>
+            <p id="result"></p>
+        </div>
+
+        <script>
+            function checkNumber(){
+                let num=document.getElementById('number').value;
+                let result=document.getElementById('result');
+
+        
+                if(num%2===0){
+                    result.textContent=`${num} is an Even Number`
+                }
+                else if (num%2!==0){
+                    result.textContent=`${num} is an Odd Number`
+                }
+
+            }
+        </script>
+    </body>
+</html>
