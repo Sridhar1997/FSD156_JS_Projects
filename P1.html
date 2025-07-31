@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Celsius to Fahrenheit</title>
+        <style>
+            body{
+                font-family: cursive;
+                font-weight: bold;
+                background-color: sandybrown;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .container{
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+            }
+            input{
+                width: 100%;
+                border-radius: 5px;
+                padding: 20px;
+                font-size: 16px;
+                border: 1px solid;
+            }
+
+            button{
+                margin-top: 10px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: sandybrown;
+                border: none;
+            }
+
+            #result{
+                margin-top: 20px;
+                font-size: 18px;
+                color: sandybrown;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Celsius to Fahrenheit Converter</h1>
+            <input type="number" id="celsius" placeholder="Enter Celsius Value"/>
+            <button onclick="convert()">Convert</button>
+            <p id="result"></p>
+        </div>
+        <script>
+            function convert(){
+                let celsius=document.getElementById('celsius').value
+                if(celsius === ""){
+                    document.getElementById('result').innerText="Please Enter a Value"
+                }
+                else{
+                    let fahrenheit=(celsius*9/5)+32
+                    document.getElementById('result').innerHTML=`Celsius - ${celsius}°C => Fahrenheit - ${fahrenheit.toFixed(2)}°F`
+                }
+            }
+        </script>
+    </body>
+</html>
